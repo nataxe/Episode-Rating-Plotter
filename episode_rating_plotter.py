@@ -19,11 +19,11 @@ def find_id(search):
 		return None
 
 def search_input():
-	search = '%20'.join(input('Search: ').split())
+	search = '%20'.join(input('Enter show name: ').split())
 	id, title = find_id(search)
 	while(id == None):
 		print("Not found")
-		search = '%20'.join(input('Search: ').split())
+		search = '%20'.join(input('Enter show name: ').split())
 		id, title = find_id(search)
 	return id, title
 
@@ -59,6 +59,7 @@ def show_ratings(id):
 		if ratings == None:
 			break
 		if len(ratings) > 0:
+			print(f'Season {season} completed')
 			seasons.append(ratings)
 	return seasons
 
