@@ -19,14 +19,13 @@ def find_id(search):
 		return None
 
 def search_input():
-	search = '%20'.join(input('Enter show name: ').split())
 	id = None
 	while(id == None):
 		try:
+			search = '%20'.join(input('Enter show name: ').split())
 			id, title = find_id(search)
 		except:
 			print("Not found")
-			search = '%20'.join(input('Enter show name: ').split())
 	return id, title
 
 def wrong_season(season, soup):
